@@ -20,10 +20,12 @@ DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputBaseFilename=MikuMikudance_setup
-SetupIconFile=D:\Program Files\MikuMikuDance 10th Anniversary Version CHS\MikuMikuDance.ico
+SetupIconFile=MikuMikuDance.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
+ArchitecturesAllowed=x64
+ArchitecturesInstallIn64BitMode=x64
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -31,7 +33,8 @@ Name: "armenian"; MessagesFile: "compiler:Languages\Armenian.isl"
 Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "bulgarian"; MessagesFile: "compiler:Languages\Bulgarian.isl"
 Name: "catalan"; MessagesFile: "compiler:Languages\Catalan.isl"
-Name: "chinesesimplified"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
+Name: "chinesesimplified"; MessagesFile: "Languages\ChineseSimplified.isl"
+Name: "chinesetraditional"; MessagesFile: "Languages\ChineseTraditional.isl"
 Name: "corsican"; MessagesFile: "compiler:Languages\Corsican.isl"
 Name: "czech"; MessagesFile: "compiler:Languages\Czech.isl"
 Name: "danish"; MessagesFile: "compiler:Languages\Danish.isl"
@@ -57,13 +60,14 @@ Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "D:\Program Files\MikuMikuDance 10th Anniversary Version CHS\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Program Files\MikuMikuDance 10th Anniversary Version CHS\d3d9.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Program Files\MikuMikuDance 10th Anniversary Version CHS\d3dx9_32.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Program Files\MikuMikuDance 10th Anniversary Version CHS\MMEffect.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Program Files\MikuMikuDance 10th Anniversary Version CHS\MMEffect.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Program Files\MikuMikuDance 10th Anniversary Version CHS\MMHack.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Program Files\MikuMikuDance 10th Anniversary Version CHS\REFERENCE.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "pack\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "pack\Data\*"; DestDir: "{app}\Data"; Flags: ignoreversion recursesubdirs
+Source: "pack\d3d9.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "pack\d3dx9_32.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "pack\MMEffect.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "pack\MMEffect.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "pack\MMHack.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "pack\REFERENCE.txt"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
